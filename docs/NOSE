@@ -1,0 +1,6 @@
+Currently running nose with;
+
+On Myers with a mount of Palmer.
+
+$ cd /media/my_hd/python/emancala/src
+$ clear; nosetests tests/ -v --nocapture

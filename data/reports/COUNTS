@@ -1,0 +1,47 @@
+STONES: 1 (18.0 seconds)
+Search Depth:1, Nodes:11
+Search Depth:2, Nodes:109
+Search Depth:3, Nodes:785
+Search Depth:4, Nodes:5169
+Search Depth:5, Nodes:24475
+Search Depth:6, Nodes:99846
+
+STONES: 2 (73.0 seconds)
+Search Depth:1, Nodes:11
+Search Depth:2, Nodes:109
+Search Depth:3, Nodes:833
+Search Depth:4, Nodes:6345
+Search Depth:5, Nodes:47369
+Search Depth:6, Nodes:342970
+
+STONES: 3 (213.0 seconds)
+Search Depth:1, Nodes:11
+Search Depth:2, Nodes:117
+Search Depth:3, Nodes:935
+Search Depth:4, Nodes:7769
+Search Depth:5, Nodes:69010
+Search Depth:6, Nodes:745108
+
+STONES: 4 (453.0 seconds)
+Search Depth:1, Nodes:11
+Search Depth:2, Nodes:127
+Search Depth:3, Nodes:1149
+Search Depth:4, Nodes:10831
+Search Depth:5, Nodes:136674
+Search Depth:6, Nodes:1227611
+
+STONES: 5 (125.0 seconds)
+Search Depth:1, Nodes:11
+Search Depth:2, Nodes:119
+Search Depth:3, Nodes:1174
+Search Depth:4, Nodes:7901
+Search Depth:5, Nodes:52596
+Search Depth:6, Nodes:344792
+
+STONES: 6 (19.0 seconds)
+Search Depth:1, Nodes:11
+Search Depth:2, Nodes:71
+Search Depth:3, Nodes:400
+Search Depth:4, Nodes:2307
+Search Depth:5, Nodes:14748
+Search Depth:6, Nodes:94957

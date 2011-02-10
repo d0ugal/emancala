@@ -1,0 +1,1 @@
+python pycala/runner/ea.py 2>&1 | tee host-#.txt

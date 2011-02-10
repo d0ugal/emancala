@@ -1,0 +1,24 @@
+# Make sure pythonpath is set...
+export PYTHONPATH='/media/my_hd/python/emancala/src/'
+
+# loop through and run loads
+for i in {1..200000}
+do
+	python pycala/players/nn/engine.py
+done
+
+# single run
+python pycala/players/nn/engine.py
+
+# run loads, shorthand
+clear; for i in {1..200000}; do    python pycala/players/nn/engine.py; done
+
+
+# Report SQL
+use emancala; SELECT COUNT(visited) as 'Total Neurons' , SUM(visited) as 'Total visits' FROM nn_neuron; SELECT COUNT(result) 'Total Games', SUM(result) as 'Score', (SELECT COUNT(result) FROM nn_log WHERE result = 1) as 'Won', (SELECT COUNT(result) FROM nn_log WHERE result = 1)/COUNT(result)*100 as 'Won Percentage',(SELECT COUNT(result) FROM nn_log WHERE result = '0') as 'Drawn', (SELECT COUNT(result) FROM nn_log WHERE result = '0')/COUNT(result)*100 as 'Drawn Percentage', (SELECT COUNT(result) FROM nn_log WHERE result = -1) as 'Lost', (SELECT COUNT(result) FROM nn_log WHERE result = -1)/COUNT(result)*100 as 'Lost Percentage', (SELECT SUM(visited) FROM nn_neuron)/COUNT(result) as 'AVG Neurons per Game'FROM nn_log; SELECT floor(id / 10000) ym, COUNT(result) 'Total Games', SUM(result) as 'Score', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = 1 and floor(id/10000) = ym) as 'Won', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = 1 and floor(id/10000) = ym)/100 as 'Won Percentage', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = 0 and floor(id/10000) = ym) as 'Drawn', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = 0 and floor(id/10000) = ym)/100 as 'Drawn Percentage', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = -1 and floor(id/10000) = ym) as 'Lost', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = -1 and floor(id/10000) = ym)/100 as 'Lost Percentage' FROM nn_log GROUP BY ym;
+
+
+
+# SQL nicely formatted.
+
+use emancala; SELECT COUNT(visited) as 'Total Neurons' , SUM(visited) as 'Total visits' FROM nn_neuron; SELECT COUNT(result) 'Total Games', SUM(result) as 'Score', (SELECT COUNT(result) FROM nn_log WHERE result = 1) as 'Won', (SELECT COUNT(result) FROM nn_log WHERE result = 1)/COUNT(result)*100 as 'Won Percentage',(SELECT COUNT(result) FROM nn_log WHERE result = '0') as 'Drawn', (SELECT COUNT(result) FROM nn_log WHERE result = '0')/COUNT(result)*100 as 'Drawn Percentage', (SELECT COUNT(result) FROM nn_log WHERE result = -1) as 'Lost', (SELECT COUNT(result) FROM nn_log WHERE result = -1)/COUNT(result)*100 as 'Lost Percentage', (SELECT SUM(visited) FROM nn_neuron)/COUNT(result) as 'AVG Neurons per Game'FROM nn_log; SELECT floor(id / 10000) ym, COUNT(result) 'Total Games', SUM(result) as 'Score', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = 1 and floor(id/10000) = ym) as 'Won', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = 1 and floor(id/10000) = ym)/100 as 'Won Percentage', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = 0 and floor(id/10000) = ym) as 'Drawn', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = 0 and floor(id/10000) = ym)/100 as 'Drawn Percentage', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = -1 and floor(id/10000) = ym) as 'Lost', (SELECT COUNT(result) as 'Overall Score' FROM nn_log WHERE result = -1 and floor(id/10000) = ym)/100 as 'Lost Percentage' FROM nn_log GROUP BY ym; 
